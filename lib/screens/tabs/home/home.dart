@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/utils/assets_manager.dart';
 import 'package:movies_app/core/utils/colors_manager.dart';
@@ -32,9 +33,10 @@ class _HomeState extends State<Home> {
                 alignment: Alignment.topCenter,
                 child: Image.asset(AssetsManager.dora),
               ),
+
               Positioned(
                 left: 10.w,
-                top: 80.h,
+                top: 90.h,
                 child: Image.asset(
                   AssetsManager.filmImage,
                   width: 150.w,

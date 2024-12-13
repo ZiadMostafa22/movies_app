@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/screens/homescreen.dart';
+import 'package:movies_app/screens/movie_details/details_screen.dart';
 import 'package:movies_app/screens/tabs/home/home.dart';
 import 'package:movies_app/screens/tabs/search/search.dart';
 import 'package:movies_app/screens/tabs/videos/videos.dart';
@@ -14,6 +15,7 @@ class RoutesManager{
   static const String videos = '/videos';
   static const String watchList = '/watchList';
   static const String homeScreen = '/homeScreen';
+  static const String detailsScreen = '/details';
 
 
   static Route? router(RouteSettings settings) {
@@ -46,6 +48,11 @@ class RoutesManager{
       case homeScreen:
         return MaterialPageRoute(
           builder: (context) =>  Homescreen(),
+        );
+
+      case detailsScreen:
+        return MaterialPageRoute(
+          builder: (context) =>  DetailsScreen(),
         );
     }
   }

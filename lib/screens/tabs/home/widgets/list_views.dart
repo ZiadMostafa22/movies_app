@@ -1,37 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies_app/core/utils/assets_manager.dart';
 import 'package:movies_app/core/utils/colors_manager.dart';
-
-import 'releases_widget.dart';
+import 'package:movies_app/my_app.dart';
 
 class ListViews extends StatelessWidget {
-  const ListViews({super.key});
+  ListViews({super.key, required this.imagePath});
+
+  String imagePath;
 
   @override
   Widget build(BuildContext context) {
-    return   Positioned(
-      top: 300.h,
-      left: 0,
-      right: 0,
-      child: Container(
-        height: 187.h,
-        width: double.infinity,
+    return Container(
+      width: 100.w,
+      height: 150.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4.r),
         color: ColorsManager.grey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Text(
-                'New Releases',
-                style: TextStyle(
-                    fontSize: 20.sp,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w400),
-              ),
-            ),
-          ],
-        ),
+      ),
+      clipBehavior: Clip.hardEdge,
+      child: Image.asset(
+        imagePath,
+        fit: BoxFit.fill,
+        width: double.infinity,
+        height: double.infinity,
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/utils/assets_manager.dart';
 import 'package:movies_app/core/utils/colors_manager.dart';
+import 'package:movies_app/core/utils/routes_manager.dart';
 import 'package:movies_app/screens/tabs/home/widgets/recommended_widget.dart';
 import 'package:movies_app/screens/tabs/home/widgets/releases_widget.dart';
 import 'package:movies_app/screens/tabs/search/search.dart';
@@ -31,7 +32,12 @@ class _HomeState extends State<Home> {
             children: [
               Align(
                 alignment: Alignment.topCenter,
-                child: Image.asset(AssetsManager.dora),
+                child: InkWell(
+                  onTap: () {
+                   Navigator.of(context).pushNamed(RoutesManager.detailsScreen);
+
+                  },
+                    child: Image.asset(AssetsManager.dora)),
               ),
 
               Positioned(

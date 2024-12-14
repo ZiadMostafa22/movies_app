@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/utils/colors_manager.dart';
+import 'package:movies_app/screens/tabs/Browse/browse.dart';
 import 'package:movies_app/screens/tabs/home/home.dart';
 import 'package:movies_app/screens/tabs/search/search.dart';
-import 'package:movies_app/screens/tabs/videos/videos.dart';
+
 import 'package:movies_app/screens/tabs/watchlist/watchlist.dart';
 
 class Homescreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomescreenState extends State<Homescreen> {
   List<Widget> tabs = [
     Home(),
     Search(),
-    Videos(),
+    Browse(),
     WatchList(),
   ];
 
@@ -51,7 +52,7 @@ class _HomescreenState extends State<Homescreen> {
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.ondemand_video),
-              label: 'VIDEOS'
+              label: 'BROWSE'
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.book),

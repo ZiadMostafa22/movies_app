@@ -21,7 +21,7 @@ class Genre extends StatelessWidget {
                 width: 2,
               ),
             ),
-            child: Center(
+            child:const Center(
               child: Text(
                 'Action',
                 style: TextStyle(color: Colors.white),

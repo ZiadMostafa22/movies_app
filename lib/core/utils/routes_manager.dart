@@ -3,19 +3,22 @@ import 'package:movies_app/screens/homescreen.dart';
 import 'package:movies_app/screens/movie_details/details_screen.dart';
 import 'package:movies_app/screens/tabs/home/home.dart';
 import 'package:movies_app/screens/tabs/search/search.dart';
-import 'package:movies_app/screens/tabs/videos/videos.dart';
+
 import 'package:movies_app/screens/tabs/watchlist/watchlist.dart';
 import 'package:movies_app/splash/splash.dart';
+
+import '../../screens/tabs/Browse/browse.dart';
 
 class RoutesManager{
 
   static const String splash = '/splash';
   static const String home = '/home';
   static const String search = '/search';
-  static const String videos = '/videos';
+  static const String browse = '/browse';
   static const String watchList = '/watchList';
   static const String homeScreen = '/homeScreen';
   static const String detailsScreen = '/details';
+
 
 
   static Route? router(RouteSettings settings) {
@@ -35,9 +38,9 @@ class RoutesManager{
           builder: (context) =>  Search(),
         );
 
-      case videos:
+      case browse:
         return MaterialPageRoute(
-          builder: (context) =>  Videos(),
+          builder: (context) =>  Browse(),
         );
 
       case watchList:

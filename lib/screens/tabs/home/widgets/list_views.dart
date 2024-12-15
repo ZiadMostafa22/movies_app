@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/utils/assets_manager.dart';
 import 'package:movies_app/core/utils/colors_manager.dart';
+import 'package:movies_app/data/model/upcoming_response/upcoming.dart';
 
 class ListViews extends StatelessWidget {
-  ListViews({super.key, required this.imagePath});
+  const ListViews({
+    super.key,
+    required this.imagePath,
 
-  String imagePath;
+  });
+
+
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +26,20 @@ class ListViews extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       child: Stack(
         children: [
-
-          Image.asset(
+          // Display image from network or fallback to local asset
+          Image.network(
             imagePath,
             fit: BoxFit.fill,
             width: double.infinity,
             height: double.infinity,
+            errorBuilder: (context, error, stackTrace) => Image.asset(
+              AssetsManager.narcos,
+              fit: BoxFit.fill,
+              width: double.infinity,
+              height: double.infinity,
+            ),
           ),
-
+          // Bookmark icon
           Positioned(
             top: .1.h,
             left: -1.w,
@@ -37,7 +49,7 @@ class ListViews extends StatelessWidget {
               width: 30.w,
             ),
           ),
-
+          // Add icon
           Positioned(
             top: 7.h,
             left: 5.w,
